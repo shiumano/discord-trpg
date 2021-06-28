@@ -17,7 +17,7 @@ async def update(ctx,filename):
     async with aiohttp.ClientSession() as session:
         with async_timeout.timeout(30):
             async with session.get('https://raw.githubusercontent.com/shiumano/discord-trpg/master/{}'.format(filename)) as response:
-                code = response.text()
+                code = await response.text()
     with open(filename,mode='w') as file:
         file.write(code)
 
