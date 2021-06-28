@@ -4,7 +4,7 @@ import async_timeout
 import importlib
 import restart
 
-version = 'd0.1.0'
+version = 'd0.1.1'
 
 bot = commands.Bot(command_prefix='r!')
 
@@ -22,13 +22,13 @@ async def update(ctx,filename):
         file.write(code)
 
     if file == 'main.py':
-        restart.rrstart_program()
+        restart.restart_program()
 		
 
 @bot.command()
 async def version(ctx):
-    await ctx.send('version:{}'.format(version))
+    await ctx.send('Version\n Base:{}'.format(version))
 
 
-with open('../token') as file:
+with open('token') as file:
     bot.run(file.read())
