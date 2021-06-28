@@ -4,7 +4,7 @@ import async_timeout
 import importlib
 import restart
 
-version = 'a0.0.1'
+version = 'd0.1.0'
 
 bot = commands.Bot(command_prefix='r!')
 
