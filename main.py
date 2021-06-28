@@ -1,5 +1,5 @@
 from discord.ext import commands
-import asyncio
+import aiohttp
 import async_timeout
 import importlib
 import restart
@@ -14,7 +14,7 @@ async def on_ready():
 
 @bot.command()
 async def update(ctx,filename):
-    async with asyncio.ClientSession() as session:
+    async with aiohttp.ClientSession() as session:
         with async_timeout.timeout(30):
             async with session.get('https://raw.githubusercontent.com/shiumano/discord-trpg/master/{}'.format(filename)) as response:
                 code = response.text()
